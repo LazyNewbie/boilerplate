@@ -1,0 +1,19 @@
+{
+    "name": "lazynewbie/boilerplate",
+    "description": "A package which provides a simple boilerplate for laravel 5",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Aleksey Atroshenko",
+            "email": "alexeydslr@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.4.0",
+        "laravel/framework": "~5.0",
+        "illuminate/contracts": "5.2",
+        "imagine/imagine": "^0.6.3"
+    }
+}
