@@ -12,9 +12,9 @@ class BaseModel extends \Illuminate\Database\Eloquent\Model
     $className = get_called_class();
     $obClass = explode("\\", $className);
     array_splice($obClass, 2, 0, 'Observers');
-    $className = implode("\\", $className) . "Observer";
+    $className = implode("\\", $obClass) . "Observer";
 
-    if(class_exists($obClass)){
+    if(class_exists($className)){
       $className::observe(new $obClass );
     }
   }
