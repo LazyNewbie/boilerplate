@@ -52,7 +52,7 @@ class BaseModel extends \Illuminate\Database\Eloquent\Model
   /**
    * this date format will be used in date presenter
   */
-  protected $dateFormat = "d/m/Y";
+  protected $datePresenterFormat = "d/m/Y";
 
 
   /**
@@ -117,7 +117,7 @@ class BaseModel extends \Illuminate\Database\Eloquent\Model
    * @return string
    */
   public function presentDate($fieldName){
-    return $this->$fieldName->format($this->dateFormat);
+    return $this->$fieldName->format($this->datePresenterFormat);
   }
 
 
