@@ -14,7 +14,7 @@ class BaseModel extends \Illuminate\Database\Eloquent\Model
     array_splice($obClass, 2, 0, 'Observers');
 
     $obClass = "\\" . implode("\\", $obClass) . "Observer";
-    if(class_exists($className)){
+    if(class_exists($obClass)){
       $className::observe(new $obClass );
     }
   }
