@@ -34,7 +34,7 @@ trait FilesTrait {
 
     $img_duplicate = $prefix . "$img_name.$img_ext";
 
-    $dirPath = '/'.trim($dirPath, '/').'/';
+    $dirPath = rtrim($dirPath, '/').'/';
 
     $filecounter = 1;
     while(file_exists($dirPath . $img_duplicate)){
@@ -51,10 +51,13 @@ trait FilesTrait {
    * @return string
   */
   protected function clearFileName($name){
-    $name = trim($name);
-    preg_replace("/[^a-zA-Z0-9]+/", "-", $name);
-
+    $name = trim(rawurldecode($name));
+    $arr = explode('.', $name);
+    $mime = array_pop($arr);
+    $name = implode('', $arr);
+    $name = preg_replace("/[^a-zA-Z0-9]+/", "-", $name);
     if(empty($name)) $name = time();
+    $name = $name.'.'.$mime;
     return $name;
   }
 
