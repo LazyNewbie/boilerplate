@@ -158,10 +158,10 @@ trait FilesTrait {
    * Create folder if not exist
    *
    * @param string $path
-   * @param string $chmod
+   * @param int $chmod
    * @return string
   */
-  protected function createFolderIfNotExist($path, $chmod = "0777"){
+  protected function createFolderIfNotExist($path, $chmod = 0777){
     if( !\File::exists($path) || !\File::isDirectory($path)){
       \File::makeDirectory($path, $chmod, true);
     }
