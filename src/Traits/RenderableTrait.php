@@ -118,6 +118,15 @@ trait RenderableTrait
 
   /**
    *
+   * @return \Illuminate\Routing\Redirector|\Illuminate\Http\RedirectResponse
+  */
+  public function redirect($to = null, $status = 302, $headers = [], $secure = null){
+    return redirect($to, $status, $headers, $secure);
+  }
+
+
+  /**
+   *
    * @return \Illuminate\Http\Request
   */
   private function request(){
